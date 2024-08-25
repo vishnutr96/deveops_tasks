@@ -1,16 +1,14 @@
 #!/bin/bash
 
-# Make sure the script is run as the "root" user
 if [ "$EUID" -ne 0 ]; then
   echo "Please run this script as the root user or with sudo."
   exit
 fi
 
-# Set up a log file to keep track of everything
+# Set up a log file 
 LOGFILE="/var/log/security_audit.log"
 EMAIL="abc@example.com"
 
-# Start the log file with a heading
 echo "Security Audit and Hardening Script - $(date)" > $LOGFILE
 
 # 1. Check Users and Groups
